@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Text tool</title>
+    <style>
+        
+@import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Tangerine:wght@400;700&display=swap');        body
+        {
+            font-family: Anonymous Pro;
+        }
+        .app-name {
+            text-align: center;
+            margin-bottom: 50px;
+            background-color: #e692ce;
+            margin: 0 550px;
+            border-radius: 20px 0 20px 0;
+            color: #72204f;
+            font-size: 40px;
+        }
+
+        .heading {
+            text-align: center;
+            color: purple;
+        }
+
+        .container {
+            display: block;
+            height: 300px;
+            width: 70%;
+            border: 4px solid #da64ef;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 30px;
+            padding: 10px;           
+            color: #72204f;
+            font-size: larger;
+            font-weight: bold;
+            text-align: center;
+            background-color: #e7e0e4;
+        }
+        p{
+            color: #72204f;
+            font-size: larger;
+            font-weight: bold;
+        }
+        .Result-text {
+            text-align: center;
+            font-size: 30px;
+        }
+
+        .btn-container {
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .action-1 {
+            margin-top: 70px;
+            height: 80px;
+            width: 200px;
+            background-color: #b3aeef;
+            border-color: #8588c7;
+            border: solid 1px;
+            color: #0f1f5a;
+            font-size: 30px;
+            border-radius: 5px;
+            font-family: Anonymous Pro;
+    
+        }
+        .action-2{
+            margin-top: 70px;
+            height: 80px;
+            width: 200px;
+            background-color: #efaeaf;
+            border-color: #daa4a4;
+            border: solid 1px;
+            color: #670909;
+            font-size: 30px;
+            border-radius: 5px;
+            font-family: Anonymous Pro;
+    
+        }
+        .action-3{
+            margin-top: 70px;
+            height: 80px;
+            width: 200px;
+            background-color: #c6b0b6;
+            border-color: #d7d8e2;
+            border: solid 1px;
+            color: #450415;
+            font-size: 30px;
+            border-radius: 5px;
+            font-family: Anonymous Pro;
+    
+        }
+        .action-4 {
+            margin-top: 70px;
+            height: 80px;
+            width: 200px;
+            background-color: #ebcfbf;
+            border-color: #a73305;
+            border: solid 1px;
+            color: #8e2701;
+            font-size: 30px;
+            border-radius: 5px;
+            font-family: Anonymous Pro;
+    
+        }
+        .action-1:hover
+        {
+            width: 220px;
+        }
+        .action-2:hover
+        {
+            width: 220px;
+        }
+        .action-3:hover
+        {
+            width: 220px;
+        }
+        .action-4:hover
+        {
+            width: 220px;
+        }
+</style>
+</head>
+<body>
+    <h1 class="app-name">WordFusion</h1>
+    <h2 class="heading">
+        Write Your Text Here...!! 
+    </h2>
+    <input type="text" class="container" id="input-text">
+ <p class="Result-text" id="resultText">
+ </p>
+ <div class="btn-container">
+        <button type="button" class="action-1" onclick="ActionResult('UPPERCASE')">
+            UpperCase
+        </button>
+        <button type="button" class="action-2" onclick="ActionResult('LowerCase')">
+            LowerCase
+        </button>
+        <button type="button" class="action-3" onclick="ActionResult('CharCount')">
+            CharCount
+        </button>
+        <button type="button" class="action-4" onclick="ActionResult('WordCount')">
+            WordCount
+        </button>
+    </div>
+    <script>
+        function ActionResult(action) {
+            const inputText = document.getElementById("input-text")
+            const resultText = document.getElementById("resultText")
+
+            if (action == 'UPPERCASE') {
+                resultText.innerText = inputText.value.toUpperCase();
+            }
+            else if (action == 'LowerCase') {
+                resultText.innerText = inputText.value.toLowerCase();
+            }
+            else if (action == 'CharCount') {
+                resultText.innerText = (`The Character Count of given text is ${inputText.value.length}`);
+            }
+            else {
+                resultText.innerText = (`The Word Count of given text is ${inputText.value.split(" ").length}`);
+
+            }
+        }
+</script>
